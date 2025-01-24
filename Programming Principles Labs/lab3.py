@@ -9,25 +9,31 @@
 def sales (sales_goal):
     # will start numbering each of the sales people entered
     salesperson_number = 1
+    
     # a variable to store the combined total of all salespeople entered
     total_sales_all = 0
 
     # loop for enter the sales data for each salesperson added to the list
     while True:
+        
         # will prompt the user to enter the weekly sales for the first salesperson
         print(f"Enter sales for salesperson #{salesperson_number}:")
+        
         # list to store the sales data for each week
         weekly_sales = []
+        
         # loop to gather sales for the 4 weeks
         for week in range (1, 5):
             while True:
                 try:
                     sales_total = float(input(f"Week {week} sales: $"))
                     weekly_sales.append(sales_total)
+                    
                     # exit the loop if the sales entry is valid
                     break
                 except ValueError:
                     print("Invalid input! Please enter a valid number.")
+                    
         # calculate the total sales for each sales person added and add it to the total sales of every sales person
         total_sales = sum(weekly_sales)
         total_sales_all += total_sales
@@ -52,6 +58,7 @@ def sales (sales_goal):
 
 def sales_calculator():
     sales_goal = float(input("Enter the sales goal: "))
+    
     # calls the function above
     salesperson_number, sales_goal, total_sales_all, manager_bonus = sales(sales_goal)
 
