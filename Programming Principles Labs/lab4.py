@@ -67,27 +67,33 @@ def meal_cost():
 def excursion_cost():
     # necessary for the people_amount variable to work inside this function
     global people_amount
-    # defining excursion options
-    picnic = 50
-    snorkeling = 25
-    guided_hike = 17
-    boat_dinner = 200
-    # a variable to say that the total cost will always be zero unless made otherwise
+    # defining excursion options and their costs
+    excursions = {
+        "Picnic Excursion": 50,
+        "Snorkeling Excursion": 25 * people_amount,
+        "Guided Hike Excursion": 17 * people_amount,
+        "Boat Dinner Excursion": 200
+    }
+    # initialize the total excursion cost
     total_excursion_cost = 0
-    # will ask if the customer wants each of the excursions or not and will calculate the total by adding each one they said yes to the total
-    try:
-        picnic_cost = input("Would you like the Picnic Excursion? (y/n): ").strip().lower() == 'y'
-        snorkeling_cost = input("Would you like the Snorkeling Excursion? (y/n): ").strip().lower() == 'y'
-        guided_hike_cost = input("Would you like the Guided Hike Excursion? (y/n): ").strip().lower() == 'y'
-        boat_dinner_cost = input("Would you like the Boat Dinner Excursion? (y/n): ").strip().lower() == 'y'
-        print("Invalid input! Please enter valid y/n responses.")
-        total_excursion_cost += picnic if picnic_cost else 0
-        total_excursion_cost += snorkeling * people_amount if snorkeling_cost else 0
-        total_excursion_cost += guided_hike * people_amount if guided_hike_cost else 0
-        total_excursion_cost += boat_dinner if boat_dinner_cost else 0
-    except ValueError:
-        print("Invalid input! Please enter valid y/n responses.")
-    # returns the total cost of the excursions selected
+
+    # Iterate through each excursion and ask the user if they want it
+    for excursion_name, excursion_cost in excursions.items():
+        while True:
+            try:
+                # Ask for user input and validate the response
+                response = input(f"Would you like the {excursion_name}? (y/n): ").strip().lower()
+                if response == 'y':
+                    total_excursion_cost += excursion_cost
+                    break
+                elif response == 'n':
+                    break
+                else:
+                    print("Invalid input! Please enter 'y' for yes or 'n' for no.")
+            except ValueError:
+                print("Invalid input! Please try again.")
+
+    # Return the total cost of all selected excursions
     return total_excursion_cost
 
 # function for calculating the total vacation cost and list out each price like in the example
