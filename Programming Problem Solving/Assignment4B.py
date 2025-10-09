@@ -6,7 +6,6 @@ def printMenu():
     print("4. Tea           - $2.00")
     print("5. Exit and Checkout")
 
-
 def getChoice():
     try:
         choice = int(input("> "))
@@ -16,7 +15,6 @@ def getChoice():
             return -1
     except ValueError:
         return -1
-
 
 def processOrder(choice):
     prices = {1: 3.00, 2: 4.00, 3: 4.00, 4: 2.00}
