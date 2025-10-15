@@ -7,3 +7,6 @@ def receipt_generator():
 
 if __name__ == '__main__':
     receipt_generator()
+
+
+    # hello
