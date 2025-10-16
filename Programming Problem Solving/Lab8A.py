@@ -21,8 +21,8 @@ def mailing_list():
                 print("Emails in mailing list: ")
                 for email in emails:
                     print(email)
-                else:
-                    print("Mailing list is empty")
+            else:
+                print("Mailing list is empty")
         elif choice == 4:
             print("Shutting down...")
             break
