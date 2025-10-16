@@ -2,6 +2,7 @@ def friendList():
     # a list which will contain tuples
     friends = []
     while True:
+        print("[Friend List]\n")
         print("1 - Add friend\n2 - List friends\n3 - Quit")
         choice = int(input("Make your selection: "))
         if choice == 1:

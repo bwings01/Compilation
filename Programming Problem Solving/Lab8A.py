@@ -1,6 +1,7 @@
 def mailing_list():
     emails = []
     while True:
+        print("[Mailing list]\n")
         print("1 - Add email\n2 - Delete email\n3 - List all emails\n4 - Quit\n")
         choice = int(input("Make your selection: "))
         if choice == 1:
