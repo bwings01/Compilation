@@ -34,8 +34,7 @@ def acntMenu(accounts, username):
             return
         if choice == 'E':
             print("Terminating...")
-            # i looked this up since in the samples on the lab you are supposed to be able to exit from the program completely from the account menu
-            sys.exit()
+            break
 
 if __name__ == "__main__":
     usrAuth()
