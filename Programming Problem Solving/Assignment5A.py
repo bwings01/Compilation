@@ -14,9 +14,11 @@ def myselectionsort(intList):
         # move the new found integer the beginning of the list. continues to shift list into the correct order
         intList[i], intList[min_index] = intList[min_index], intList[i]
     return intList
+
 # storing my sorting method in sortedList variable
 sortedList = myselectionsort(intList)
 print("Sorted list (using my selection sort):", sortedList)
+
 # storing python base sort function of the users list from outside the function
 builtinSorted = sorted(intList)
 print("Sorted list (using default function):", builtinSorted)
