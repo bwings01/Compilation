@@ -1,1 +1,1 @@
-All of my school projects wrapped into one repo
+all of my school work
